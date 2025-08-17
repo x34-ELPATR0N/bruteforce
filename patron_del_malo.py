@@ -5,7 +5,7 @@ import time
 import ctypes
 import os
 
-# --- Carregando o Coração de C (Inalterado) ---
+#.
 try:
     engine_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'engine.so')
     c_engine = ctypes.CDLL(engine_path)
@@ -34,7 +34,7 @@ class CombinationBruteForcerGUI:
             self.log_message(f"ERRO CRÍTICO: Motor C não carregado. Causa: {ENGINE_ERROR}", "error")
 
     def setup_styles(self):
-        # (Estilos Inalterados)
+        #.
         self.style = ttk.Style()
         self.style.theme_create("area51", parent="alt", settings={
             "TFrame": {"configure": {"background": "#0d0d0d"}},
@@ -90,7 +90,7 @@ class CombinationBruteForcerGUI:
         self.target_entry = ttk.Entry(control_panel)
         self.target_entry.pack(fill="x", padx=10)
 
-        # --- CAMPO DE URL RESTAURADO (INICIALMENTE OCULTO) ---
+        #.
         self.url_label = ttk.Label(control_panel, text="URL DA PÁGINA DE LOGIN:")
         self.url_entry = ttk.Entry(control_panel)
         
@@ -99,7 +99,7 @@ class CombinationBruteForcerGUI:
         self.user_entry = ttk.Entry(control_panel)
         self.user_entry.pack(fill="x", padx=10)
         
-        # O resto do painel de controle permanece o mesmo...
+        #.
         combo_label = ttk.Label(control_panel, text="FORJA DE MUNIÇÕES:")
         combo_label.pack(anchor="w", pady=(20, 5), padx=10)
         self.wordlist1_path = tk.StringVar()
@@ -138,10 +138,10 @@ class CombinationBruteForcerGUI:
         self.log_text.tag_config('info', foreground='#9aedfe')
         self.log_text.tag_config('warning', foreground='#ffa500')
         
-        # Chama a função uma vez para garantir que o estado inicial esteja correto
+        #.
         self.toggle_url_field()
 
-    # --- FUNÇÃO RESTAURADA PARA CONTROLAR CAMPO DE URL ---
+    #.
     def toggle_url_field(self):
         if self.mode.get() == "web":
             # Insere os widgets do URL na posição correta
@@ -153,8 +153,8 @@ class CombinationBruteForcerGUI:
             self.url_entry.pack_forget()
 
     def brute_force_worker(self):
-        # ... (código existente)
-        # --- LÓGICA DE ATAQUE ATUALIZADA PARA O MODO WEB ---
+        #.
+        #.
         
         target = self.target_entry.get()
         user = self.user_entry.get()
@@ -178,7 +178,7 @@ class CombinationBruteForcerGUI:
             attack_mode = self.mode.get()
             
             if attack_mode in ["ssh", "imap"]:
-                # Usa o motor C para SSH e IMAP
+                #.
                 target_b = target.encode('utf-8')
                 user_b = user.encode('utf-8')
                 pass_b = password.encode('utf-8')
@@ -187,13 +187,13 @@ class CombinationBruteForcerGUI:
                     found = True
             
             elif attack_mode == "web":
-                # --- PONTO DE ADAPTAÇÃO WEB ---
-                # Motor C é ignorado. A lógica é puramente Python.
-                # O Mestre deve inserir sua lógica de 'requests' aqui.
+                #.
+                #.
+                #.
                 self.log_message(f"Tentando (Web): {user} com a senha: {password}")
                 self.log_message("AVISO: Lógica de ataque web precisa ser implementada pelo Mestre.", "warning")
-                time.sleep(0.5) # Simula a latência de uma requisição web
-                # Exemplo: if "senha_correta_indicador" in requests.post(...): found = True
+                time.sleep(0.5) #.
+                #.
             
             if found:
                 self.log_message("="*50, "success")
@@ -206,9 +206,9 @@ class CombinationBruteForcerGUI:
         
         self.root.after(0, self.reset_ui)
 
-    # O resto das funções (browse_wordlist, log_message, password_generator, start/stop, reset)
-    # permanecem as mesmas.
-    # ... (cole o restante das funções da versão anterior aqui)
+    #.
+    #.
+    #.
     def browse_wordlist(self, path_var):
         path = filedialog.askopenfilename(title="Selecione uma Wordlist")
         if path:
