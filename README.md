@@ -1,4 +1,4 @@
-# 🔐 Wordlist Fusion Bruteforce Tool
+# 🔐 Wordlist Fusion Bruteforce Tool com GUI pratico para ajudar iniciantes
 
 Ferramenta de bruteforce que combina duas wordlists para gerar tentativas inteligentes de acesso. Ideal para testes de segurança em sites, IPs e emails, fundindo palavras, números e caracteres de forma dinâmica e eficiente.
 ferramenta feita para sistemas Linux.
